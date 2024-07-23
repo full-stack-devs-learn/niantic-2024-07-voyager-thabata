@@ -46,24 +46,27 @@ public class Main
         System.out.println();
 
 
-
         // 1. Declare a new variable to hold your name.
         // Variable name: name
         // Data Type: string (names/words are strings)
-
+        String name = "Tabatha";
+        System.out.println("Name: " +name);
+        System.out.println();
 
 
         // 2. Declare a variable to hold your age.
         // Variable name: age
         // Data Type: int (age is a whole number)
-
-
+        int age = 36;
+        System.out.println("Age: " +age);
+        System.out.println();
 
         // 3. Declare a variable that holds the first 5 digits of PI.
         // Variable name: pi
         // Data Type: double (pi is a number with decimal places)
-
-
+        double pi = 3.1415;
+        System.out.println("Pi: " +pi);
+        System.out.println();
 
         // 4. Declare a variable holds the price of
         // an adult meal at the buffet.
@@ -72,6 +75,9 @@ public class Main
 
         // NOTE: the decimal data type  is not automatically recognized
         // see lecture notes
+        double price = 19.99;
+        System.out.println("Price: $" +price);
+        System.out.println();
     }
 
     public static void section02()
@@ -98,35 +104,53 @@ public class Main
         // Hint: You cannot use the same variable name
         // as a variable that you have used before.
 
+        String FavoriteHeroName = "Dazzler";
+        System.out.println("Favorite Super Hero: " +FavoriteHeroName);
+        System.out.println();
+
 
 
         // 6. Declare a variable to hold the value of
         // value of a test score. The test has 100
         // questions and each question is worth 1 point.
         // (You can choose the score)
+        int TestScore = 100;
+        System.out.println("Test Score: " +TestScore);
+        System.out.println();
 
 
 
         // 7. Declare a variable that holds the current
         // population in the United States.
         // (search what the population is today)
-
-
+        long CurrentUSAPopulation = 341814420;
+        System.out.println("Current population in the USA: " +CurrentUSAPopulation);
+        System.out.println();
 
         // 8. Declare a variable that holds the current
         // population in China.
         // (search what the population is today)
+        long CurrentChinaPopulation = 1425178782;
+        System.out.println("Current population in China: " +CurrentChinaPopulation);
+        System.out.println();
 
 
 
         // 9. Declare a variable that holds the current
         // population in the world.
         // (search what the population is today)
+        // need to add L after the long number & before semicolon)
+        long CurrentWorldPopulation = 8122914525L;
+        System.out.println("Current population in the world: " +CurrentWorldPopulation);
+        System.out.println();
 
 
 
         // 10. Declare a variable that specifies whether
         // or not your mouse is wireless.
+        boolean isMouseWireless = true;
+        System.out.println("Wireless Mouse: " +isMouseWireless);
+        System.out.println();
 
 
 
