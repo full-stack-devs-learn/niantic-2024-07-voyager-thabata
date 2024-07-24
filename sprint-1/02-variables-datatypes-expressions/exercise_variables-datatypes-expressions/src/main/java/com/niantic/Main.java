@@ -345,10 +345,19 @@ public class Main
         // 19. Claire sells cookies by the dozen. Sean has 14 students
         // in his class. He has bought 3 dozen cookies for his class.
 
+        int Students = 14;
+        System.out.println("Students: " +Students);
+        int DozenCookies = 3;
+        System.out.println("Cookies by the dozen: " +DozenCookies);
+        int TotalCookies = 12 * DozenCookies;
+        System.out.println("Total Cookies: " +TotalCookies);
+        System.out.println();
+
         // Sean wants to divide the cookies evenly between
         // his students. How many cookies will each student
         // receive? (Students can only receive whole cookies)
-
+        int CookiesPerStudent = TotalCookies / Students;
+        System.out.println("Cookies Per Student: " +CookiesPerStudent);
 
 
         // 20. Sean has 14 students in his class.
@@ -357,7 +366,9 @@ public class Main
         // Sean wants to divide the cookies evenly between
         // his students. After giving the students their
         // cookies, how many cookies will be left over?
-
+        int CookiesLeft = TotalCookies - CookiesPerStudent * Students;
+        System.out.println("Cookies left: " +CookiesLeft);
+        System.out.println();
 
 
         // 21. Sean's class has earned a cookie party.
@@ -366,6 +377,10 @@ public class Main
         // does he need to buy from Claire's Cookies so that
         // each student can receive 3 cookies.
 
+        int CookiesNeeded = Students * 3;
+        int DozensNeeded = CookiesNeeded / 12;
+        System.out.println("Dozens needed so each student gets 3 cookies: " +DozensNeeded +" dozens");
+        System.out.println();
 
 
         // 22. Sean's class has earned a cookie party. The number
@@ -383,13 +398,35 @@ public class Main
         // below 90.
 
         // How many dozen cookies does Sean need to buy.
-
-
+        System.out.println("\u2022 Cookie Party");
+        int TopCookies = 4;
+        int MidCookies = 3;
+        int LowCookies = 2;
+        System.out.println("100% score gets " +TopCookies +" cookies");
+        System.out.println("90% score gets " +MidCookies +" cookies");
+        System.out.println("Less than 90% score gets " +LowCookies +" cookies");
+        System.out.println();
+        int TopScore = 2;
+        int MidScore = 4;
+        int LowScore = Students - (TopScore + MidScore);
+        System.out.println("Students with 100%: " +TopScore);
+        System.out.println("Students with 90%: " +MidScore);
+        System.out.println("Students with less than 90%: " +LowScore);
+        System.out.println();
+        int CookiesNeededforParty = (TopScore * TopCookies) + (MidScore * MidCookies) + (LowScore * LowCookies);
+        System.out.println("Cookies needed for party: " +CookiesNeededforParty +" cookies");
+        int DozensNeededforParty = CookiesNeededforParty / 12;
+        System.out.println("Dozens of cookies needed for party: " +DozensNeededforParty +" dozens");
+        System.out.println();
 
         // 23. If Claire's Cookies sells each dozen cookies for 12.99,
         // how much will it cost Sean to buy 4 dozen cookies.
-
-
+        float CookieDozenPrice = 12.99f;
+        int DozensPurchased = 4;
+        System.out.println("Price of Dozen Cookies: $" +CookieDozenPrice);
+        float CookiePriceTotal = CookieDozenPrice * DozensPurchased;
+        System.out.println("Total for 4 dozens of cookies: $" +CookiePriceTotal);
+        System.out.println();
 
         // (Use this information for the next several questions)
         // Claire now charges different prices for different
