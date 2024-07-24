@@ -114,6 +114,7 @@ public class Main
         // value of a test score. The test has 100
         // questions and each question is worth 1 point.
         // (You can choose the score)
+
         int TestScore = 100;
         System.out.println("Test Score: " +TestScore);
         System.out.println();
@@ -123,14 +124,18 @@ public class Main
         // 7. Declare a variable that holds the current
         // population in the United States.
         // (search what the population is today)
-        long CurrentUSAPopulation = 341814420;
+
+        int CurrentUSAPopulation = 341814420;
         System.out.println("Current population in the USA: " +CurrentUSAPopulation);
         System.out.println();
+
+
 
         // 8. Declare a variable that holds the current
         // population in China.
         // (search what the population is today)
-        long CurrentChinaPopulation = 1425178782;
+
+        int CurrentChinaPopulation = 1425178782;
         System.out.println("Current population in China: " +CurrentChinaPopulation);
         System.out.println();
 
@@ -139,8 +144,9 @@ public class Main
         // 9. Declare a variable that holds the current
         // population in the world.
         // (search what the population is today)
-        // need to add L after the long number & before semicolon)
-        long CurrentWorldPopulation = 8122914525L;
+        // need to add l after the long number & before semicolon)
+
+        long CurrentWorldPopulation = 8122914525l;
         System.out.println("Current population in the world: " +CurrentWorldPopulation);
         System.out.println();
 
@@ -148,6 +154,7 @@ public class Main
 
         // 10. Declare a variable that specifies whether
         // or not your mouse is wireless.
+
         boolean isMouseWireless = true;
         System.out.println("Wireless Mouse: " +isMouseWireless);
         System.out.println();
@@ -158,10 +165,22 @@ public class Main
         // home town are. Then declare 2 variables
         // to store the Latitude and Longitude.
 
+        String Hometown = "Rio de Janeiro";
+        float HometownLatitude = 22.9068f;
+        float HometownLongitude = 43.1729f;
+        System.out.println("My hometown: " +Hometown);
+        System.out.println("Latitude: " +HometownLatitude);
+        System.out.println("Longitude: " +HometownLongitude);
+        System.out.println();
+
 
 
         // 12. Create a variable that holds the current
         // Microsoft stock price.
+
+        float MicrosoftStockPrice = 444.85f;
+        System.out.println("Current Microsoft's Stock Price: $" +MicrosoftStockPrice);
+        System.out.println();
     }
     
     public static void section03()
@@ -197,37 +216,94 @@ public class Main
         // 13. In his last basketball game Pete made 7 shots,
         // but missed 3 of his shots.
 
+        System.out.println("\u2022 Pete's Last Game Stats:");
+        int BasketballShotsMade = 7;
+        int BasketballShotsMissed = 3;
+        System.out.println("Shots made: " +BasketballShotsMade);
+        System.out.println("Shots missed: " +BasketballShotsMissed);
+
         // How many shots did Pete take?
 
-
+        int BasketballShotsTaken = BasketballShotsMade + BasketballShotsMissed;
+        System.out.println("Total shots taken: "+BasketballShotsTaken);
+        System.out.println();
 
         // 14. In his previous basketball game Pete took 20 shots.
         // He missed 6 shots, and he made 3 three point shots.
 
+        System.out.println("\u2022 Pete's Previous Game Stats:");
+        int PreviousShotsMade = 20;
+        System.out.println("Shots made: " +PreviousShotsMade);
+        int PreviousMissedShots = 6;
+        System.out.println("Shots missed: " +PreviousMissedShots);
+        int PreviousThreePointShots = 3;
+        System.out.println("3-point shots: " +PreviousThreePointShots);
+
         // How many 2 point shots did Pete make?\
 
+        int PreviousTwoPointShots = PreviousShotsMade - PreviousMissedShots - PreviousThreePointShots;
+        System.out.println("2-point shots: " +PreviousTwoPointShots);
+        System.out.println();
 
 
         // 15. Pete and Pat are teammates. Pete made 6 shots.
         // Pat made twice as many shots as Pete.
 
+        System.out.println("\u2022 Pete & Pat's Game Stats:");
+        int PeteShots = 6;
+        System.out.println("Pete's shots made: " +PeteShots);
+
+        int PatShots = PeteShots * 2;
+        System.out.println("Pat's shots made: " +PatShots);
+
         // How many total shots did they make?
 
+        int TotalShots = PeteShots + PatShots;
+        System.out.println("Total shots: " +TotalShots);
+        System.out.println();
 
 
         // 16. Pete has made 13 shots, Pat has made 9.
+
+        System.out.println("\u2022 New Pete & Pat's Game Stats:");
+        int NewPeteShots = 13;
+        int NewPatShots = 9;
+        System.out.println("Pete's shots made so far: " +NewPeteShots);
+        System.out.println("Pat's shot made so far: " +NewPatShots);
+
+
+
         // If both Pete and Pat make 1 more shot each
         // before the game ends, how many total shots
         // did the Terrifying Twosome make in the game?
+
+        System.out.println("\u2023 If both Pete and Pat make 1 more shot each:");
+        NewPeteShots++;
+        NewPatShots++;
+        int NewTotalShots = NewPeteShots + NewPatShots;
+        System.out.println("Total shots: " +NewTotalShots);
+        System.out.println();
 
 
 
         // 17. In his last game Pete made 11 shots.
         // he missed 4 shots.
 
+        System.out.println("\u2022 Pete's Last Game:");
+        int LastGameShotsMade = 11;
+        int LastGameShotsMissed = 4;
+        System.out.println("Shots made: " +LastGameShotsMade);
+        System.out.println("Shots missed: " +LastGameShotsMissed);
+
+
         // What percentage of his shots did he make?
 
+        int LastTotalShots = LastGameShotsMade + LastGameShotsMissed;
+        System.out.println("Total shots: " +LastTotalShots);
 
+        int ShotPercentage = (LastGameShotsMade * 100) / 15;
+        System.out.println("Percentage of shots made: " +ShotPercentage +"%");
+        System.out.println();
 
 
         // 18. Pete and Pat have decided to only take 3 point
@@ -238,6 +314,30 @@ public class Main
 
         // How many shots do Pete and Pat have to take to win
         // this game?
+
+        // this is all wrong
+        //System.out.println("\u2022 If Pete and Pat only take 3-point shots: ");
+        //int OpposingTeamScore = 31;
+        //int PointsNeededToWin = OpposingTeamScore +1;
+        //System.out.println("Opposing team score: " +OpposingTeamScore);
+        //int PointsPerShot = 3;
+        //int PetePatThreePointPercentage = 70;
+        //System.out.println("Pete & Pat's Three Point shot percentage: " +PetePatThreePointPercentage);
+        //int PointsToWin = PointsNeededToWin * PetePatThreePointPercentage / 100;
+        //int ShotsToWin = PointsToWin / 3 +1;
+        //System.out.println("Shots needed to win: " +ShotsToWin);
+        //System.out.println();
+
+        System.out.println("\u2022 If Pete & Pat only take 3-point shots: ");
+        int OpposingTeamScore = 31;
+        System.out.println("Opposing team score: " +OpposingTeamScore);
+        int PointsNeededToWin = OpposingTeamScore +1;
+        int PercentageShotsMade = 70;
+        int TotalPointsToWin = (PointsNeededToWin * 100) / PercentageShotsMade;
+        int TotalShotsToWin = (TotalPointsToWin / 3) + 1;
+        System.out.println("Total Shots to Win: " +TotalShotsToWin);
+        System.out.println();
+
     }
     
     public static void clairesCookies()
