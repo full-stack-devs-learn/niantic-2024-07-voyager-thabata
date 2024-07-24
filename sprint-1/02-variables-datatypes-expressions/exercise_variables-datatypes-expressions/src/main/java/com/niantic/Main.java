@@ -315,18 +315,7 @@ public class Main
         // How many shots do Pete and Pat have to take to win
         // this game?
 
-        // this is all wrong
-        //System.out.println("\u2022 If Pete and Pat only take 3-point shots: ");
-        //int OpposingTeamScore = 31;
-        //int PointsNeededToWin = OpposingTeamScore +1;
-        //System.out.println("Opposing team score: " +OpposingTeamScore);
-        //int PointsPerShot = 3;
-        //int PetePatThreePointPercentage = 70;
-        //System.out.println("Pete & Pat's Three Point shot percentage: " +PetePatThreePointPercentage);
-        //int PointsToWin = PointsNeededToWin * PetePatThreePointPercentage / 100;
-        //int ShotsToWin = PointsToWin / 3 +1;
-        //System.out.println("Shots needed to win: " +ShotsToWin);
-        //System.out.println();
+
 
         System.out.println("\u2022 If Pete & Pat only take 3-point shots: ");
         int OpposingTeamScore = 31;
