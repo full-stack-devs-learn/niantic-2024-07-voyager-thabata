@@ -169,8 +169,8 @@ public class Main
         float HometownLatitude = 22.9068f;
         float HometownLongitude = 43.1729f;
         System.out.println("My hometown: " +Hometown);
-        System.out.println("Latitude: " +HometownLatitude);
-        System.out.println("Longitude: " +HometownLongitude);
+        System.out.println("Latitude: " +HometownLatitude +"° S");
+        System.out.println("Longitude: " +HometownLongitude + "° W");
         System.out.println();
 
 
@@ -322,9 +322,10 @@ public class Main
         System.out.println("Opposing team score: " +OpposingTeamScore);
         int PointsNeededToWin = OpposingTeamScore +1;
         int PercentageShotsMade = 70;
+        System.out.println("Percentage of 3-point shots made: " +PercentageShotsMade +"%");
         int TotalPointsToWin = (PointsNeededToWin * 100) / PercentageShotsMade;
         int TotalShotsToWin = (TotalPointsToWin / 3) + 1;
-        System.out.println("Total Shots to Win: " +TotalShotsToWin);
+        System.out.println("Total Shots Taken to Win: " +TotalShotsToWin);
         System.out.println();
 
     }
