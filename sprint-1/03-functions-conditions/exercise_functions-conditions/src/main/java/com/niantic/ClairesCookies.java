@@ -21,10 +21,10 @@ public class ClairesCookies
      */
     public double calculateSubtotal(int quantity) {
 
-        double DozenCookiePrice = 12.95;
-        double TotalPriceOfOrder = DozenCookiePrice * quantity;
+        double dozenCookiePrice = 12.95;
+        double totalPriceOfOrder = dozenCookiePrice * quantity;
 
-        return TotalPriceOfOrder;
+        return totalPriceOfOrder;
     }
 
     /*
@@ -45,13 +45,13 @@ public class ClairesCookies
      * calculateTotal(5) -> 68.47
      */
     public double calculateTotal(int quantity){
-        double DozenCookiePrice = 12.95;
-        double TaxRate = (5.75 / 100);
-        double PriceBeforeTax = DozenCookiePrice * quantity;
-        double TaxOnTotal = PriceBeforeTax * TaxRate;
-        double PriceAfterTax = PriceBeforeTax + TaxOnTotal;
+        double dozenCookiePrice = 12.95;
+        double taxRate = (5.75 / 100);
+        double priceBeforeTax = dozenCookiePrice * quantity;
+        double taxOnTotal = priceBeforeTax * taxRate;
+        double priceAfterTax = priceBeforeTax + taxOnTotal;
 
-        return PriceAfterTax;
+        return priceAfterTax;
     }
 
     /*
@@ -86,12 +86,12 @@ public class ClairesCookies
         double snickerDozenPrice = 12.95;
         double chocolateDozenPrice = 13.95;
         double frostedDozenPrice = 15.95;
-        double TaxRate = (5.75 / 100);
-        double PriceBeforeTax = (snickerDozenPrice * snickerDozen) + (chocolateDozenPrice * chocolateDozen) + (frostedDozenPrice * frostedDozen);
-        double TaxOnTotal = PriceBeforeTax * TaxRate;
-        double PriceAfterTax = PriceBeforeTax + TaxOnTotal;
+        double taxRate = (5.75 / 100);
+        double priceBeforeTax = (snickerDozenPrice * snickerDozen) + (chocolateDozenPrice * chocolateDozen) + (frostedDozenPrice * frostedDozen);
+        double taxOnTotal = priceBeforeTax * taxRate;
+        double priceAfterTax = priceBeforeTax + taxOnTotal;
 
-        return PriceAfterTax;
+        return priceAfterTax;
     }
 
 
@@ -133,12 +133,12 @@ public class ClairesCookies
             frostPriceIncrease = 0;
         }
 
-        double TaxRate = (5.75 / 100);
-        double DozenPrice = 12.95;
-        double CustomOrder = (quantity * DozenPrice) + (quantity * chocoPriceIncrease) + (quantity * frostPriceIncrease);
-        double CustomOrderTax = CustomOrder * TaxRate;
-        double PriceAfterTax = CustomOrder + CustomOrderTax;
-        return PriceAfterTax;
+        double taxRate = (5.75 / 100);
+        double dozenPrice = 12.95;
+        double customOrder = (quantity * dozenPrice) + (quantity * chocoPriceIncrease) + (quantity * frostPriceIncrease);
+        double customOrderTax = customOrder * taxRate;
+        double priceAfterTax = customOrder + customOrderTax;
+        return priceAfterTax;
     }
 
 }

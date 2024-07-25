@@ -22,9 +22,9 @@ public class BackyardBasketball {
      *
      */
     public int calculateWinningPercentage(int gamesWon, int gamesLost) {
-        int TotalGames = gamesWon + gamesLost;
-        int WinningPercentage = gamesWon * 100 / TotalGames;
-        return WinningPercentage;
+        int totalGames = gamesWon + gamesLost;
+        int winningPercentage = gamesWon * 100 / totalGames;
+        return winningPercentage;
     }
 
 
@@ -45,16 +45,16 @@ public class BackyardBasketball {
      *
      */
     public int calculatePointsScored(int shotPercentage, int shotsTaken, boolean isThree) {
-        int PointsPerShot;
+        int pointsPerShot;
         if (isThree) {
-            PointsPerShot = 3;
+            pointsPerShot = 3;
         } else {
-            PointsPerShot = 2;
+            pointsPerShot = 2;
         }
 
-        int TotalShotsMade = (shotsTaken * shotPercentage) / 100;
-        int TotalPointsScored = TotalShotsMade * PointsPerShot;
-        return TotalPointsScored;
+        int totalShotsMade = (shotsTaken * shotPercentage) / 100;
+        int totalPointsScored = totalShotsMade * pointsPerShot;
+        return totalPointsScored;
     }
 
 
@@ -80,33 +80,26 @@ public class BackyardBasketball {
      *
      *
      */
-    public int calculateShotsRequired(int shotPercentage, int desiredScore, boolean isThree) {
-        int madeBaskets;
-        int actualScore;
+    public int calculateShotsRequired(int shotPercentage, int desiredScore, boolean isThree)
+    {
+        double madeBaskets;
         int shotsRequired;
 
-        if (isThree) {
-            madeBaskets = desiredScore / 3;
-            actualScore = madeBaskets * 3;
+        if (isThree)
+        {
+            madeBaskets = desiredScore / 3.0;
         }
         else
         {
-            madeBaskets = desiredScore / 2;
-            actualScore = madeBaskets * 2;
+            madeBaskets = desiredScore / 2.0;
         }
 
-        if(actualScore < desiredScore)
-        {
-            madeBaskets++;
-        }
-        double actualPercentage = ((madeBaskets * 100) / shotPercentage);
-        shotsRequired = (int)Math.ceil(actualPercentage);
+        madeBaskets = Math.ceil(madeBaskets);
+
+        double percentage = ((madeBaskets * 100) / shotPercentage);
+        shotsRequired = (int)Math.ceil(percentage);
 
         return shotsRequired;
-
-
-
-
     }
 
 }
