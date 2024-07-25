@@ -1,7 +1,6 @@
 package com.niantic;
 
-public class BackyardBasketball
-{
+public class BackyardBasketball {
     /*
      * Teams that play in the backyard league want to be able
      * to calculate their winning percentage.
@@ -22,11 +21,15 @@ public class BackyardBasketball
      * calculateWinningPercentage(5, 10) -> 33
      *
      */
-    public int calculateWinningPercentage(int gamesWon, int gamesLost)
-    {
-        return 0;
+    public int calculateWinningPercentage(int gamesWon, int gamesLost) {
+        int TotalGames = gamesWon + gamesLost;
+        int WinningPercentage = gamesWon * 100 / TotalGames;
+        return WinningPercentage;
     }
 
+
+    public void displayWinningPercentage(String teamName, int gamesWon, int gamesLost) {
+    }
 
     /*
      * The calculatePointsScored function should calculate
@@ -41,9 +44,17 @@ public class BackyardBasketball
      * calculatePointsScored(67, 15, false) -> 20
      *
      */
-    public int calculatePointsScored(int shotPercentage, int shotsTaken, boolean isThree)
-    {
-        return 0;
+    public int calculatePointsScored(int shotPercentage, int shotsTaken, boolean isThree) {
+        int PointsPerShot;
+        if (isThree) {
+            PointsPerShot = 3;
+        } else {
+            PointsPerShot = 2;
+        }
+
+        int TotalShotsMade = (shotsTaken * shotPercentage) / 100;
+        int TotalPointsScored = TotalShotsMade * PointsPerShot;
+        return TotalPointsScored;
     }
 
 
@@ -64,11 +75,21 @@ public class BackyardBasketball
      * calculateShotsRequired(50, 10, true) -> 8
      * calculateShotsRequired(75, 15, true) -> 7
      * calculateShotsRequired(80, 18, true) -> 8
-     * calculateShotsRequired(67, 24, false) -> 18     *
+     * calculateShotsRequired(67, 24, false) -> 18
+     *
+     *
      *
      */
-    public int calculateShotsRequired(int shotPercentage, int desiredScore, boolean isThree)
-    {
-        return 0;
+    public int calculateShotsRequired(int shotPercentage, int desiredScore, boolean isThree) {
+        int PointsPerShot;
+        if (isThree) {
+            PointsPerShot = 3;
+        } else {
+            PointsPerShot = 2;
+        }
+        int ShotsTaken = (desiredScore * shotPercentage) / 100;
+        int ShotsRequired = ShotsTaken * PointsPerShot;
+
+        return ShotsRequired;
     }
 }

@@ -3,7 +3,7 @@ package com.niantic;
 public class ClairesCookies
 {
     @SuppressWarnings("unused") 
-    private final double TaxRate = .0575;
+    private final double TAX_RATE = .0575;
 
     /*
      * Claire's cookies cost $12.95 a dozen.
@@ -19,9 +19,12 @@ public class ClairesCookies
      * calculateSubtotal(2) -> 25.90
      * calculateSubtotal(5) -> 64.75
      */
-    public double calculateSubtotal(int quantity)
-    {
-        return 0;
+    public double calculateSubtotal(int quantity) {
+
+        double DozenCookiePrice = 12.95;
+        double TotalPriceOfOrder = DozenCookiePrice * quantity;
+
+        return TotalPriceOfOrder;
     }
 
     /*
@@ -34,16 +37,21 @@ public class ClairesCookies
      * of how many dozen cookies they want to order.
      *
      * The calculateTotal function should calculate
-     * the price of an order BEFORE the cost of tax
+     * the price of an order AFTER the cost of tax
      * is added.
      *
      * calculateTotal(1) -> 13.69
      * calculateTotal(2) -> 27.39
      * calculateTotal(5) -> 68.47
      */
-    public double calculateTotal(int quantity)
-    {
-        return 0;
+    public double calculateTotal(int quantity){
+        double DozenCookiePrice = 12.95;
+        double TaxRate = (5.75 / 100);
+        double PriceBeforeTax = DozenCookiePrice * quantity;
+        double TaxOnTotal = PriceBeforeTax * TaxRate;
+        double PriceAfterTax = PriceBeforeTax + TaxOnTotal;
+
+        return PriceAfterTax;
     }
 
     /*
@@ -75,7 +83,15 @@ public class ClairesCookies
      */
     public double calculateQuickOrder(int snickerDozen, int chocolateDozen, int frostedDozen)
     {
-        return 0;
+        double snickerDozenPrice = 12.95;
+        double chocolateDozenPrice = 13.95;
+        double frostedDozenPrice = 15.95;
+        double TaxRate = (5.75 / 100);
+        double PriceBeforeTax = (snickerDozenPrice * snickerDozen) + (chocolateDozenPrice * chocolateDozen) + (frostedDozenPrice * frostedDozen);
+        double TaxOnTotal = PriceBeforeTax * TaxRate;
+        double PriceAfterTax = PriceBeforeTax + TaxOnTotal;
+
+        return PriceAfterTax;
     }
 
 
@@ -103,7 +119,26 @@ public class ClairesCookies
      */
     public double calculateCustomOrder (int quantity, boolean hasChocolateChips, boolean hasFrosting)
     {
-        return 0;
+        int chocoPriceIncrease;
+        if (hasChocolateChips) {
+            chocoPriceIncrease = 1;
+        } else {
+            chocoPriceIncrease = 0;
+        }
+
+        int frostPriceIncrease;
+        if (hasFrosting) {
+            frostPriceIncrease = 2;
+        } else {
+            frostPriceIncrease = 0;
+        }
+
+        double TaxRate = (5.75 / 100);
+        double DozenPrice = 12.95;
+        double CustomOrder = (quantity * DozenPrice) + (quantity * chocoPriceIncrease) + (quantity * frostPriceIncrease);
+        double CustomOrderTax = CustomOrder * TaxRate;
+        double PriceAfterTax = CustomOrder + CustomOrderTax;
+        return PriceAfterTax;
     }
 
 }
