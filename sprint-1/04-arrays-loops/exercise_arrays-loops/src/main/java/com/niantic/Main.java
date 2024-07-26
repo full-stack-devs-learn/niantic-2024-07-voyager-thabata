@@ -1,4 +1,4 @@
-package com.nianatic;
+package com.niantic;
 
 public class Main
 {

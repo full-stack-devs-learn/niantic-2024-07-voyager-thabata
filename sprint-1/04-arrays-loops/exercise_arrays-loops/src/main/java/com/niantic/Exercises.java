@@ -1,4 +1,4 @@
-package com.nianatic;
+package com.niantic;
 
 public class Exercises
 {
@@ -11,7 +11,8 @@ public class Exercises
      */
     public String[] daysOfTheWeek()
     {
-        return null;
+        String[] daysOfTheWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        return daysOfTheWeek;
     }
 
     /*
@@ -23,7 +24,8 @@ public class Exercises
      */
     public String[] monthsOfTheYear()
     {
-        return null;
+        String[] monthsOfTheYear = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        return monthsOfTheYear;
     }
 
     /*
@@ -38,7 +40,13 @@ public class Exercises
      */
     public int[] oneToFifty()
     {
-        return null;
+        int[] oneToFifty = new int[50];
+
+        for (int i = 0; i < 50; i++)
+        {
+            oneToFifty[i] = i + 1;
+        }
+        return oneToFifty;
     }
 
     /*
@@ -53,7 +61,15 @@ public class Exercises
      */
     public int[] evenNumbers()
     {
-        return null;
+        int[] evenNumbers = new int[100];
+        int index = 0;
+        int i;
+        for (i = 2; i <= 201; i+=2)
+        {
+            evenNumbers[index] = i;
+            index++;
+        }
+        return evenNumbers;
     }
 
     /*
@@ -75,7 +91,8 @@ public class Exercises
      */
     public String firstDayOfWeek(String[] daysOfTheWeek)
     {
-        return null;
+        return daysOfTheWeek[0];
+
     }
 
     /*
@@ -97,7 +114,8 @@ public class Exercises
      */
     public String lastDayOfWeek(String[] daysOfTheWeek)
     {
-        return null;
+        
+        return daysOfTheWeek;
     }
 
     /*
@@ -235,7 +253,7 @@ public class Exercises
     /*
      * 15)
      * Given an array of prices, return the
-     * lowest price that is greater than 0.
+     * lowest price.
      *
      * lowestPrice([-15.25, 15.25, 2.34, 3.50])                        =>  2.34
      * lowestPrice([12.75, -5.5, 10.25, 18.44, 4.23, -15.55, 9.20])    =>  -15.55

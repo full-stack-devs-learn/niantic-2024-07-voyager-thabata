@@ -1,4 +1,4 @@
-package com.nianatic;
+package com.niantic;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
