@@ -114,8 +114,8 @@ public class Exercises
      */
     public String lastDayOfWeek(String[] daysOfTheWeek)
     {
-        
-        return daysOfTheWeek;
+
+        return daysOfTheWeek[daysOfTheWeek.length - 1];
     }
 
     /*
@@ -134,7 +134,7 @@ public class Exercises
      */
     public String monthName(String[] months, int monthNumber)
     {
-        return null;
+        return months[monthNumber -1];
     }
 
     /*
@@ -156,6 +156,16 @@ public class Exercises
      */
     public boolean hasName(String[] names, String nameToFind)
     {
+        // I don't understand why I couldn't get equalsIgnoreCase to work for this one
+        String ignoreCaseNameToFind = nameToFind.toLowerCase();
+
+        for (String name : names)
+        {
+            if (name.toLowerCase().equals(ignoreCaseNameToFind))
+            {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -175,10 +185,22 @@ public class Exercises
      * countName(["Ron", "Michelle", "Lisa", "Kent", "Michelle"], "kent")   =>  2
      * countName(["Ron", "Michelle", "Lisa", "Kent", "Michelle"], "Jenny")  =>  0
      */
-    public int countName(String[] names, String nameToFind)
+
+        public int countName(String[] names, String nameToFind)
     {
-        return -1;
+        String ignoreCaseNameToFind = nameToFind.toLowerCase();
+        int count = 0;
+
+        for (String name : names)
+        {
+            if (name.toLowerCase().equals(ignoreCaseNameToFind))
+            {
+                count++;
+            }
+        }
+        return count;
     }
+
 
     /*
      * 10)
@@ -191,7 +213,13 @@ public class Exercises
      */
     public int sumNumbers(int[] numbers)
     {
-        return -1;
+        int sum = 0;
+
+        for (int i = 0; i < numbers.length ; i++)
+        {
+            sum += numbers[i];
+        }
+        return sum;
     }
 
     /*
@@ -206,7 +234,18 @@ public class Exercises
      */
     public int doubleEvens(int[] numbers)
     {
-        return -1;
+        //all even: if (i % 2 == 0)
+
+        int sum = 0;
+
+        for(int number : numbers)
+        {
+            if(number % 2 == 0)
+            {
+                sum += number;
+            }
+        }
+        return sum * 2;
     }
 
     /*
@@ -221,7 +260,13 @@ public class Exercises
      */
     public int sumEveryThird(int[] numbers)
     {
-        return -1;
+        int sum = 0;
+
+        for (int i = 0; i < numbers.length; i+= 3)
+        {
+            sum += numbers[i];
+        }
+        return sum;
     }
 
     /*
@@ -234,7 +279,16 @@ public class Exercises
      */
     public double averagePrice(double[] prices)
     {
-        return -1;
+        // for average: sum / prices.length
+        //for (int i = 0; i < ; i++) {
+          double sum = 0;
+
+        for (int i = 0; i < prices.length; i++)
+        {
+            sum += prices[i];
+        }
+        //}
+        return sum / prices.length;
     }
 
     /*
@@ -247,7 +301,15 @@ public class Exercises
      */
     public double highestValue(double[] prices)
     {
-        return -1;
+        double value = prices[0];
+        for (int i = 1; i < prices.length; i++)
+        {
+            if (prices[i] > value)
+            {
+                value = prices[i];
+            }
+        }
+        return value;
     }
 
     /*
@@ -260,7 +322,15 @@ public class Exercises
      */
     public double lowestValue(double[] prices)
     {
-        return -1;
+        double value = prices[0];
+        for (int i = 1; i < prices.length; i++)
+        {
+            if (prices[i] < value)
+            {
+                value = prices[i];
+            }
+        }
+        return value;
     }
 
 }
