@@ -19,14 +19,13 @@ public class Exercises
     public String changeCase(String word, boolean toUpperCase)
     {
 
-
+        // if True = toUpperCase
+        // if False = toLowerCase
+        String changeCase = word.toUpperCase();
+        {
+            return word;
+        }
     }
-
-
-
-
-
-
 
 
     /*
