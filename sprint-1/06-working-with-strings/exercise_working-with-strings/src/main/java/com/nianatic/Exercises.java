@@ -18,8 +18,16 @@ public class Exercises
      */
     public String changeCase(String word, boolean toUpperCase)
     {
-        return null;
+
+
     }
+
+
+
+
+
+
+
 
     /*
      * As a full stack developer you will often need to
