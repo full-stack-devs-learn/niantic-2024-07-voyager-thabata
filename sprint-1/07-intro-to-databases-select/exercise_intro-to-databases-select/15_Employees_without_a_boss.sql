@@ -6,3 +6,9 @@ USE northwind;
 
 -- Expected: 1 row
 
+SELECT 
+	last_name
+    , first_name
+    , title
+FROM employees
+WHERE reports_to IS null

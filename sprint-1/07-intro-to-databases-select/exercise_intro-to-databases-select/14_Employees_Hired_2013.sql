@@ -6,3 +6,9 @@ USE northwind;
 
 -- Expected: 3 rows
 
+SELECT 
+	last_name
+    , first_name 
+    , title
+FROM employees
+WHERE hire_date LIKE '%2013%'
