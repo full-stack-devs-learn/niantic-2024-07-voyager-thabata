@@ -3,7 +3,7 @@ package com.nianatic;
 public class Exercises
 {
     /*
-     * In this function you need to convert a word
+     *(1) In this function you need to convert a word
      * either to all upper case letters or all
      * lower case.
      *
@@ -18,18 +18,19 @@ public class Exercises
      */
     public String changeCase(String word, boolean toUpperCase)
     {
-
-        // if True = toUpperCase
-        // if False = toLowerCase
-        String changeCase = word.toUpperCase();
+        if (toUpperCase)
         {
-            return word;
+            return word.toUpperCase();
+        }
+        else
+        {
+            return word.toLowerCase();
         }
     }
 
 
     /*
-     * As a full stack developer you will often need to
+     * (2) As a full stack developer you will often need to
      * dynamically create Html in code. In this function
      * you are required to take the input and convert it
      * to a valid Html String.
@@ -56,11 +57,12 @@ public class Exercises
      */
     public String createHtml(String content, String elementName)
     {
-        return null;
+        String formattedHtml = "<" + elementName + ">" + content + "</" + elementName + ">";
+        return formattedHtml;
     }
 
     /*
-     * Sometimes Html elements do not have any content
+     * (3) Sometimes Html elements do not have any content
      *
      * <p></p>
      *
@@ -78,11 +80,20 @@ public class Exercises
      */
     public String moreHtml(String content, String elementName)
     {
-        return null;
+        String formattedHtml;
+        if (content.isEmpty())
+        {
+            formattedHtml = "<" + elementName + " />";
+        }
+        else
+        {
+            formattedHtml = "<" + elementName + ">" + content + "</" + elementName + ">";
+        }
+        return formattedHtml;
     }
 
     /*
-     * Xml is similar to Html - it uses element names
+     * (4) Xml is similar to Html - it uses element names
      * to describe the data that is being stored.
      *
      * Unlike html, however, there are no pre-defined
@@ -101,11 +112,12 @@ public class Exercises
      */
     public String createXml(int id, String name)
     {
-        return  null;
+        String formattedXml = "<customer>" + "<id>" + id + "</id>" + "<name>" + name + "</name>" + "</customer>";
+        return  formattedXml;
     }
 
     /*
-     * The customer has noted that even though
+     * (5) The customer has noted that even though
      * the xml that is returned is correct, it is still
      * somewhat difficult to read because it is all on
      * a single line
@@ -138,11 +150,12 @@ public class Exercises
      */
     public String formattedXml(int id, String name)
     {
-        return null;
+        String easyToReadXml = "<customer>" + "\n  <id>" + id + "</id>" + "\n  <name>" + name + "</name>" + "\n</customer>";
+        return  easyToReadXml;
     }
 
     /*
-     * In this function you will be given all the
+     * (6) In this function you will be given all the
      * individual parts of a full name. You need to
      * return the fully formatted name as a single String
      *
@@ -166,7 +179,7 @@ public class Exercises
     }
 
     /*
-     * You are writing a program for HR.
+     * (7) You are writing a program for HR.
      * When they hire a new employee they must be
      * given an username to access the network.
      *
