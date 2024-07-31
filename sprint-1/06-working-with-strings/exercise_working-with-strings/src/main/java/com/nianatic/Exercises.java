@@ -175,7 +175,20 @@ public class Exercises
      */
     public String formatFullName(String firstName, String middleName, String lastName, String suffix)
     {
-        return  null;
+        String fullName = firstName;
+
+        if (!middleName.isEmpty())
+        {
+            fullName += " " + middleName;
+        }
+        fullName += " " + lastName;
+
+        if (!suffix.isEmpty())
+        {
+            fullName += ", " + suffix;
+        }
+
+        return  fullName;
     }
 
     /*
@@ -208,13 +221,12 @@ public class Exercises
     {
         //must be all lower case
         String lowerCaseFullName = fullName.strip().toLowerCase();
-        //suffix must be ignored (suffix are preceded by a comma)
 
+        //suffix must be ignored (suffix are preceded by a comma)
         String [] fullNameParts = lowerCaseFullName.split(",");
         String nameOnly = fullNameParts[0];
 
         //middle name should only use the first initial
-
         String [] names = nameOnly.split(" ");
         String firstName = names[0];
         String middleName = "";
@@ -229,8 +241,8 @@ public class Exercises
         {
             lastName = names[1];
         }
-        //names separated by period
 
+        //names separated by period
         String userName = middleName.isEmpty()
                             ? firstName + "." + lastName
                             : firstName + "." + middleName + "." + lastName;
