@@ -5,3 +5,8 @@ USE northwind;
 
 -- Expected: 69 Rows
 
+SELECT
+	region
+    , city
+FROM customers
+WHERE customer_id IS NOT null

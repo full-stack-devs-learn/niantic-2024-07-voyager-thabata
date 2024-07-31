@@ -14,3 +14,4 @@ FROM customers
 WHERE country = 'Canada'
 	OR country = 'USA'
     OR country = 'Mexico'
+ORDER BY country ASC

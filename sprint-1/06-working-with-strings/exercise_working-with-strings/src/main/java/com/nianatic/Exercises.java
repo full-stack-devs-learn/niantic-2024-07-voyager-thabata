@@ -175,20 +175,20 @@ public class Exercises
      */
     public String formatFullName(String firstName, String middleName, String lastName, String suffix)
     {
-        String fullName = firstName;
+        String formattedName = firstName;
 
         if (!middleName.isEmpty())
         {
-            fullName += " " + middleName;
+            formattedName += " " + middleName;
         }
-        fullName += " " + lastName;
+        formattedName += " " + lastName;
 
         if (!suffix.isEmpty())
         {
-            fullName += ", " + suffix;
+            formattedName += ", " + suffix;
         }
 
-        return  fullName;
+        return  formattedName;
     }
 
     /*
@@ -243,10 +243,22 @@ public class Exercises
         }
 
         //names separated by period
-        String userName = middleName.isEmpty()
+        //short version:
+        /*String userName = middleName.isEmpty()
                             ? firstName + "." + lastName
                             : firstName + "." + middleName + "." + lastName;
+        */
+        //long version:
+        String userName;
 
+        if(middleName.isEmpty())
+        {
+            userName = firstName + "." + lastName;
+        }
+        else
+        {
+            userName = firstName + "." + middleName + "." + lastName;
+        }
         return userName;
     }
 }
