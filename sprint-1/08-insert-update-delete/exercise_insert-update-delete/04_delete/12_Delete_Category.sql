@@ -15,5 +15,12 @@ WHERE category_id = 9;
 
 -- The only user input should be a variable at the top of the 
 -- script that holds the Category Name.
--- The sript should do the rest
+-- The script should do the rest
 
+SET @category_id = 9;
+
+DELETE FROM products
+WHERE category_id = @category_id;
+
+DELETE FROM categories
+WHERE category_id = @category_id;

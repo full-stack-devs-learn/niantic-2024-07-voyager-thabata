@@ -45,69 +45,65 @@ OrderDetails: (Create 5 line items)
     Discount: 0
 */
 
--- DROP DATABASE IF EXISTS customer;
--- not sure I need this ^ 
-
--- CREATE DATABASE customer;
--- not sure I need this either ^
-
 USE northwind;
--- ?? is this correct?
 
--- do I actually need to create the tables?!
-CREATE TABLE customers
-(
-	customer_id CHAR(5) NOT NULL,
-    company_name VARCHAR (50) NOT NULL,
-    contact_name VARCHAR(50) NOT NULL,
-    address VARCHAR(200) NOT NULL,
-    city VARCHAR(50) NOT NULL,
-    region VARCHAR(50) NOT NULL,
-    postal_code INT(5) NOT NULL,
-    country VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE orders
-(
-	order_id INT AUTO_INCREMENT,
-    product_id VARCHAR(50),
-    unit_price INT (10),
-    quantity INT(10),
-    discount INT(5),
-    order_date TIMESTAMP,
-    ship_name VARCHAR(50),
-    ship_address VARCHAR(200)
-);
-
--- customer variables:
+-- VARIABLES add a new customer:
 SET @customer_id = 'ABCDE';
 SET @company_name = '13 Management';
 SET @contact_name = 'Taylor Swift';
-SET @address = "153 Franklin Street";
+SET @address = '153 Franklin Street';
 SET @city = 'New York';
 SET @region = 'NY';
 SET @postal_code = '10013';
 SET @country = 'USA';
 
+-- VARIABLES add products to be ordered:
+SET @product_1_id = '19';
+SET @product_2_id = '21';
+SET @product_3_id = '25';
+SET @product_4_id = '48';
+SET @product_5_id = '68';
+
+-- add new customer:
 INSERT INTO customers (customer_id, company_name, contact_name, address, city, region, postal_code, country)
 VALUES (@customer_id, @company_name, @contact_name, @address, @city, @region, @postal_code, @country);
 
+-- add new order and generate order_id:
+INSERT INTO orders (order_id, customer_id, order_date, ship_name, ship_address, ship_city, ship_region, ship_postal_code, ship_country)
+VALUES (order_id, @customer_id, '2024-07-31 00:00:00', @contact_name, @address, @city, @region, @postal_code, @country);
 
--- order variables:
-SET @order_id = '';
-SET @customer_id = '';
-SET @order_date = '';
-SET ship_name = '';
-SET ship_address = '';
+-- to use the order_id created above:
+SET @order_id = LAST_INSERT_ID();
 
+-- didn't enter discount since it defaults to 0
 
--- order details variables:
-SET @order_id = '';
-SET @product_id = '';
-SET @unit_price = '';
-SET @quantity = '';
-SET @discount = '';
+-- product_1:
+-- get the price:
+SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_1_id;
 
+INSERT INTO order_details (order_id, product_id, unit_price, quantity)
+VALUES (@order_id, @product_1_id, @unit_price, 3);
 
-INSERT INTO order (order_id, product_id, unit_price, quantity, discount)
-VALUES 
+-- product_2:
+SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_2_id;
+
+INSERT INTO order_details (order_id, product_id, unit_price, quantity)
+VALUES (@order_id, @product_2_id, @unit_price, 5);
+
+-- product_3:
+SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_3_id;
+
+INSERT INTO order_details (order_id, product_id, unit_price, quantity)
+VALUES (@order_id, @product_3_id, @unit_price, 5);
+
+-- product_4:
+SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_4_id;
+
+INSERT INTO order_details (order_id, product_id, unit_price, quantity)
+VALUES (@order_id, @product_4_id, @unit_price, 3);
+
+-- product_5:
+SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_5_id;
+
+INSERT INTO order_details (order_id, product_id, unit_price, quantity)
+VALUES (@order_id, @product_5_id, @unit_price, 2);
