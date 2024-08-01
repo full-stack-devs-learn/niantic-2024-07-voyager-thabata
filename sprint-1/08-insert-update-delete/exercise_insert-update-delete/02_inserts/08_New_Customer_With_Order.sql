@@ -85,24 +85,28 @@ INSERT INTO order_details (order_id, product_id, unit_price, quantity)
 VALUES (@order_id, @product_1_id, @unit_price, 3);
 
 -- product_2:
+-- get the price:
 SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_2_id;
 
 INSERT INTO order_details (order_id, product_id, unit_price, quantity)
 VALUES (@order_id, @product_2_id, @unit_price, 5);
 
 -- product_3:
+-- get the price:
 SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_3_id;
 
 INSERT INTO order_details (order_id, product_id, unit_price, quantity)
 VALUES (@order_id, @product_3_id, @unit_price, 5);
 
 -- product_4:
+-- get the price:
 SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_4_id;
 
 INSERT INTO order_details (order_id, product_id, unit_price, quantity)
 VALUES (@order_id, @product_4_id, @unit_price, 3);
 
 -- product_5:
+-- get the price:
 SELECT unit_price INTO @unit_price FROM products WHERE product_id = @product_5_id;
 
 INSERT INTO order_details (order_id, product_id, unit_price, quantity)
