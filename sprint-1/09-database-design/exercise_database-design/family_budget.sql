@@ -25,7 +25,7 @@ CREATE TABLE expenses
 );
 
 
-CREATE TABLE vendor
+CREATE TABLE vendors
 (
 	vendor_id INT NOT NULL AUTO_INCREMENT,
     vendor_name VARCHAR(30),
@@ -60,8 +60,8 @@ ADD CONSTRAINT fk_expenses_sub_category_id
 FOREIGN KEY (sub_category_id) REFERENCES sub_categories (sub_category_id);
 
 ALTER TABLE expenses
-ADD CONSTRAINT fk_expenses_vendor
-FOREIGN KEY (vendor_id) REFERENCES vendor (vendor_id);
+ADD CONSTRAINT fk_expenses_vendors
+FOREIGN KEY (vendor_id) REFERENCES vendors (vendor_id);
 
 ALTER TABLE sub_categories
 ADD CONSTRAINT fk_sub_categories_categories
@@ -75,4 +75,7 @@ INSERT INTO person (person_name) VALUES ('Tabatha'), ('Raymond');
 INSERT INTO categories (category_name) VALUES ('Entertainment'), ('Food'), ('Healthcare'), ('Housing'), ('Transportation'), ('Vacation/Travel');
 
 
-INSERT INTO sub_categories (sub_category_name) VALUES ('Internet'), ('Rent'), ('Utilities'), ('Gas'), ('Groceries'), ('Rx'), ('Games'), ('Flight'), ('Uber'), ('Restaurant'), ('Dr Visit'), ('Streaming Services'), ('Hotel'), ('Car maintanence'), ('Snacks'), ('OTC medicine');
+INSERT INTO sub_categories (sub_category_name, category_id) VALUES ('Internet', 4), ('Rent', 4), ('Utilities', 4), ('Gas', 5), ('Groceries', 2), ('Rx', 3), ('Games', 1), ('Flight', 6), ('Uber', 5), ('Restaurant', 2), ('Dr Visit', 3), ('Streaming Services', 1), ('Hotel', 6), ('Car maintanence', 5), ('Snacks', 2), ('OTC medicine', 3);
+
+
+INSERT INTO vendors (vendor_name) VALUES ('Amazon'), ('Target'), ('Fred Meyer'), ('Walgreens'), ('Dollar Tree'), ('Landmark'), ('PSE'), ('Hulu'), ('Discovery+'), ('Steam'), ('Final Fantasy XIV'), ('Nintendo'), ('Peacock'), ('Bellingahm Bay Dental'), ('Mount Baker Dental'), ('5 guys'), ('Taylor Swift Store'), ('Etsy'), ('Costco'), ('Insomnia Cookies'), ('Comcast'), ('Clarity Mental Health'), ('Visible'), ('Dairy Queen'), ('Spotify'), ('Taco Bell');
