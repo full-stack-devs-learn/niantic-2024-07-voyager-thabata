@@ -14,7 +14,17 @@ public class TestScores
      */
     public ArrayList<TestScore> getScoresByTest(ArrayList<TestScore> testScores, String testName)
     {
-        return null;
+        ArrayList<TestScore> scoresByTest = new ArrayList<>();
+
+        for (TestScore test : testScores)
+        {
+            if (test.getTestName().equals(testName))
+            {
+                scoresByTest.add(test);
+            }
+        }
+
+        return scoresByTest;
     }
 
     /*
@@ -24,7 +34,16 @@ public class TestScores
      */
     public ArrayList<TestScore> getScoresByStudent(ArrayList<TestScore> testScores, String student)
     {
-        return null;
+        ArrayList<TestScore> scoresByStudent = new ArrayList<>();
+
+        for (TestScore studentName : testScores)
+        {
+            if (studentName.getStudentName().equals(student))
+            {
+                scoresByStudent.add(studentName);
+            }
+        }
+        return scoresByStudent;
     }
 
     /*
@@ -33,6 +52,13 @@ public class TestScores
      */
     public int getHighestScore(ArrayList<TestScore> testScores)
     {
+        ArrayList<TestScore> highestScore = new ArrayList<>();
+
+        for (TestScore : TestScores)
+        {
+            if (number > max) {max = number;}
+        }
+
         return 0;
     }
 
