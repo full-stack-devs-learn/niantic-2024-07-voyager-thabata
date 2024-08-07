@@ -1,4 +1,4 @@
-# Encapsulation
+                                           # Encapsulation
 
 In this exercise, you'll create the classes specified below. The unit tests you run verify that you defined the classes correctly.
 

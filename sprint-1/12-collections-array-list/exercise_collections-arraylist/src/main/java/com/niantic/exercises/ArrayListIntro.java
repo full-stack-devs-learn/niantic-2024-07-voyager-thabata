@@ -73,10 +73,11 @@ public class ArrayListIntro
      */
     public int max(ArrayList<Integer> numbers)
     {
-        max = numbers[0];
-        for (int i = 0; i < numbers.size; i++)
+        int max = 0;
+
+        for (Integer number : numbers)
         {
-            if (numbers[i] > max) max = numbers(i);
+            if (number > max) {max = number;}
         }
 
         return max;
@@ -91,7 +92,13 @@ public class ArrayListIntro
      */
     public int min(ArrayList<Integer> numbers)
     {
-        return 0;
+        Integer min = 0;
+
+        for (Integer number : numbers)
+        {
+            if (number < min) {min = number;}
+        }
+        return min;
     }
 
 
@@ -104,7 +111,15 @@ public class ArrayListIntro
      */
     public int average(ArrayList<Integer> numbers)
     {
-        return 0;
+        int sum = 0;
+        for (Integer number : numbers)
+        {
+            sum += number;
+        }
+
+        int average = sum / numbers.size();
+
+        return average;
     }
 
 
