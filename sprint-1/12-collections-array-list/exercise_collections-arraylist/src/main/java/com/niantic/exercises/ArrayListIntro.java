@@ -1,5 +1,6 @@
 package com.niantic.exercises;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class ArrayListIntro
@@ -12,8 +13,18 @@ public class ArrayListIntro
      */
     public ArrayList<String> getHeroesList()
     {
-        return null;
+
+        ArrayList<String> names = new ArrayList<>(5);
+
+            names.add("Taylor Swift");
+            names.add("Michelle Obama");
+            names.add("Ruth Bader Ginsburg");
+            names.add("Kamala Harris");
+            names.add("Rebeca Andrade");
+
+        return names;
     }
+
 
     /*
     2. Given a list of integers, create and return a new list of just the
@@ -24,8 +35,17 @@ public class ArrayListIntro
      */
     public ArrayList<Integer> findEvens(ArrayList<Integer> numbers)
     {
-        return null;
+        ArrayList<Integer> even = new ArrayList<>();
+
+        for (int number : numbers)
+        {
+        if (number % 2 == 0)
+            even.add(number);
+        }
+
+        return even;
     }
+
 
     /*
     3. Given a list of integers, return the sum of all numbers
@@ -35,8 +55,15 @@ public class ArrayListIntro
      */
     public int sum(ArrayList<Integer> numbers)
     {
-        return 0;
+        int sum = 0;
+        for (Integer number : numbers)
+        {
+            sum += number;
+        }
+
+        return sum;
     }
+
 
     /*
     4. Given a list of integers, return the highest number
@@ -46,8 +73,15 @@ public class ArrayListIntro
      */
     public int max(ArrayList<Integer> numbers)
     {
-        return 0;
+        max = numbers[0];
+        for (int i = 0; i < numbers.size; i++)
+        {
+            if (numbers[i] > max) max = numbers(i);
+        }
+
+        return max;
     }
+
 
     /*
     5. Given a list of integers, return the lowest number
@@ -60,6 +94,7 @@ public class ArrayListIntro
         return 0;
     }
 
+
     /*
     6. Given a list of integers, return the average of all numbers
        This should return the average as an integer, not a floating point
@@ -71,6 +106,7 @@ public class ArrayListIntro
     {
         return 0;
     }
+
 
     /*
     7.  Build an arrayList that holds the fibonacci sequence

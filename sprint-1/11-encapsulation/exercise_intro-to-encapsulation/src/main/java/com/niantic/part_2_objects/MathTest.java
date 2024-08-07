@@ -4,7 +4,7 @@ public class MathTest
 {
     private int score;
     private int possiblePoints;
-    private String studentName;
+    private final String studentName;
 
     public MathTest(int possiblePoints, String studentName)
     {
@@ -19,11 +19,28 @@ public class MathTest
     public int getScore() {return score;}
     public void setScore(int score) {this.score = score;}
 
-    public double percent = ((double) score / possiblePoints) * 100;
-    public double getPercent() {return percent;}
+    public int getPercent()
+    {
+        return (int) Math.round(score * 100.00 / possiblePoints);
+    }
 
-    int letterGrade;
-    public int getLetterGrade() {return letterGrade;}
+    public String getLetterGrade()
+    {
+        int percent = getPercent();
 
+        if (percent >= 90)
+        {return "A";}
 
+        else if (percent >= 80)
+        {return "B";}
+
+        else if (percent >= 70)
+        {return "C";}
+
+        else if (percent >= 60)
+        {return "D";}
+
+        else
+        {return "F";}
+    }
 }

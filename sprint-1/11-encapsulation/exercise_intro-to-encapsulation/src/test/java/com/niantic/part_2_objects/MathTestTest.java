@@ -118,7 +118,7 @@ class MathTestTest extends ReflectionBase<MathTest>
     }
 
     @Test
-    public void mathTest_shouldHave_getLetterGrade()
+    public void mathTest_shouldHave_getGetLetterGrade()
     {
         // arrange
         // act
@@ -147,7 +147,7 @@ class MathTestTest extends ReflectionBase<MathTest>
     }
 
     @Test
-    public void getLetterGrade_should_calculateGradeFor_A() throws InvocationTargetException, IllegalAccessException, InstantiationException
+    public void getGetLetterGrade_should_calculateGradeFor_A() throws InvocationTargetException, IllegalAccessException, InstantiationException
     {
         // arrange
         var constructor = getConstructor(klass, Integer.TYPE, String.class);
@@ -165,7 +165,7 @@ class MathTestTest extends ReflectionBase<MathTest>
     }
 
     @Test
-    public void getLetterGrade_should_calculateGradeFor_B() throws InvocationTargetException, IllegalAccessException, InstantiationException
+    public void getGetLetterGrade_should_calculateGradeFor_B() throws InvocationTargetException, IllegalAccessException, InstantiationException
     {
         // arrange
         var constructor = getConstructor(klass, Integer.TYPE, String.class);
@@ -183,7 +183,7 @@ class MathTestTest extends ReflectionBase<MathTest>
     }
 
     @Test
-    public void getLetterGrade_should_calculateGradeFor_C() throws InvocationTargetException, IllegalAccessException, InstantiationException
+    public void getGetLetterGrade_should_calculateGradeFor_C() throws InvocationTargetException, IllegalAccessException, InstantiationException
     {
         // arrange
         var constructor = getConstructor(klass, Integer.TYPE, String.class);
@@ -201,7 +201,7 @@ class MathTestTest extends ReflectionBase<MathTest>
     }
 
     @Test
-    public void getLetterGrade_should_calculateGradeFor_D() throws InvocationTargetException, IllegalAccessException, InstantiationException
+    public void getGetLetterGrade_should_calculateGradeFor_D() throws InvocationTargetException, IllegalAccessException, InstantiationException
     {
         // arrange
         var constructor = getConstructor(klass, Integer.TYPE, String.class);
@@ -219,7 +219,7 @@ class MathTestTest extends ReflectionBase<MathTest>
     }
 
     @Test
-    public void getLetterGrade_should_calculateGradeFor_F() throws InvocationTargetException, IllegalAccessException, InstantiationException
+    public void getGetLetterGrade_should_calculateGradeFor_F() throws InvocationTargetException, IllegalAccessException, InstantiationException
     {
         // arrange
         var constructor = getConstructor(klass, Integer.TYPE, String.class);
