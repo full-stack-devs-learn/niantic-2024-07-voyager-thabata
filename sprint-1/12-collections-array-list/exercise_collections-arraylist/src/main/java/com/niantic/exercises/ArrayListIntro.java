@@ -139,6 +139,21 @@ public class ArrayListIntro
      */
     public ArrayList<Integer> buildFibonacci(int size)
     {
-        return null;
+        ArrayList<Integer> fibonacciSequence = new ArrayList<>();
+
+        fibonacciSequence.add(0);
+        fibonacciSequence.add(1);
+
+        for (int i = 2; i < size ; i++)
+        {
+            int lastNumber = fibonacciSequence.get(fibonacciSequence.size() -1);
+            int secondToLastNumber = fibonacciSequence.get(fibonacciSequence.size() -2);
+
+            fibonacciSequence.add(lastNumber + secondToLastNumber);
+        }
+
+        System.out.println(fibonacciSequence);
+
+        return fibonacciSequence;
     }
 }

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class TestScores
 {
-
     /*
     1.  An ArrayList of TestScores contains test results for all students and all of their tests
         Given an input of All testScores and the name of a test - return all scores for the
@@ -27,6 +26,7 @@ public class TestScores
         return scoresByTest;
     }
 
+
     /*
     2.  An ArrayList of TestScores contains test results for all students and all of their tests
         Given an input of All testScores and the name of a student - return all scores for the
@@ -46,21 +46,26 @@ public class TestScores
         return scoresByStudent;
     }
 
+
     /*
     3.  An ArrayList of TestScores contains test results for all students and all of their tests
         Given an input of All testScores return the highest score.
      */
     public int getHighestScore(ArrayList<TestScore> testScores)
     {
-        ArrayList<TestScore> highestScore = new ArrayList<>();
+        int highestScore = 0;
 
-        for (TestScore : TestScores)
+        for (TestScore score : testScores)
         {
-            if (number > max) {max = number;}
+            if (score.getScore() > highestScore)
+            {
+                highestScore = score.getScore();
+            }
         }
 
-        return 0;
+        return highestScore;
     }
+
 
     /*
     4.  An ArrayList of TestScores contains test results for all students and all of their tests
@@ -68,8 +73,19 @@ public class TestScores
      */
     public int getLowestScore(ArrayList<TestScore> testScores)
     {
-        return 0;
+        int lowestScore = 100;
+
+        for (TestScore score : testScores)
+        {
+            if (score.getScore() < lowestScore)
+            {
+                lowestScore = score.getScore();
+            }
+        }
+
+        return lowestScore;
     }
+
 
     /*
     5.  An ArrayList of TestScores contains test results for all students and all of their tests
@@ -77,8 +93,15 @@ public class TestScores
      */
     public int getAverageScore(ArrayList<TestScore> testScores)
     {
-        return 0;
+        int sum = 0;
+        for (TestScore score : testScores)
+        {
+            sum += score.getScore();
+        }
+
+        return sum / testScores.size();
     }
+
 
     /*
     6.  An ArrayList of TestScores contains test results for all students and all of their tests
@@ -86,8 +109,22 @@ public class TestScores
      */
     public int getHighestScoreByTest(ArrayList<TestScore> testScores, String testName)
     {
-        return 0;
+        int highestScore = 0;
+
+        for (TestScore score : testScores)
+        {
+            if (testName.equals(score.getTestName()))
+            {
+                if (score.getScore() > highestScore)
+                {
+                    highestScore = score.getScore();
+                }
+            }
+        }
+
+        return highestScore;
     }
+
 
     /*
     7.  An ArrayList of TestScores contains test results for all students and all of their tests
@@ -95,8 +132,22 @@ public class TestScores
      */
     public int getLowestScoreByTest(ArrayList<TestScore> testScores, String testName)
     {
-        return 0;
+        int lowestScore = 100;
+
+        for (TestScore score : testScores)
+        {
+            if (testName.equals(score.getTestName()))
+            {
+                if (score.getScore() < lowestScore)
+                {
+                    lowestScore = score.getScore();
+                }
+            }
+        }
+
+        return lowestScore;
     }
+
 
     /*
     8.  An ArrayList of TestScores contains test results for all students and all of their tests
@@ -104,8 +155,21 @@ public class TestScores
      */
     public int getAverageScoreByTest(ArrayList<TestScore> testScores, String testName)
     {
-        return 0;
+        int sum = 0;
+        int counter = 0;
+
+        for (TestScore score : testScores)
+        {
+            if (testName.equals(score.getTestName()))
+            {
+                sum += score.getScore();
+                counter++;
+            }
+        }
+
+        return sum / counter;
     }
+
 
     /*
     9.  An ArrayList of TestScores contains test results for all students and all of their tests
@@ -113,8 +177,22 @@ public class TestScores
      */
     public int getHighestScoreByStudent(ArrayList<TestScore> testScores, String student)
     {
-        return 0;
+        int highestScoreByStudent = 0;
+
+        for (TestScore score : testScores)
+        {
+            if (student.equals(score.getStudentName()))
+            {
+                if (score.getScore() > highestScoreByStudent)
+                {
+                    highestScoreByStudent = score.getScore();
+                }
+            }
+        }
+
+        return highestScoreByStudent;
     }
+
 
     /*
     10.  An ArrayList of TestScores contains test results for all students and all of their tests
@@ -122,8 +200,22 @@ public class TestScores
      */
     public int getLowestScoreByStudent(ArrayList<TestScore> testScores, String student)
     {
-        return 0;
+        int lowestScoreByStudent = 100;
+
+        for (TestScore score : testScores)
+        {
+            if (student.equals(score.getStudentName()))
+            {
+                if (score.getScore() < lowestScoreByStudent)
+                {
+                    lowestScoreByStudent = score.getScore();
+                }
+            }
+        }
+
+        return lowestScoreByStudent;
     }
+
 
     /*
     11.  An ArrayList of TestScores contains test results for all students and all of their tests
@@ -131,6 +223,18 @@ public class TestScores
      */
     public int getAverageScoreByStudent(ArrayList<TestScore> testScores, String student)
     {
-        return 0;
+        int sum = 0;
+        int counter = 0;
+
+        for (TestScore score : testScores)
+        {
+            if (student.equals(score.getStudentName()))
+            {
+                sum += score.getScore();
+                counter++;
+            }
+        }
+
+        return sum / counter;
     }
 }
