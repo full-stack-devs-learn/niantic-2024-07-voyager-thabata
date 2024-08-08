@@ -63,9 +63,32 @@ public class CategoryDao
 
     Execute the query, then return a Category object from the results
      */
-    public Category getCategoryById(int categoryId)
+    public Category getCategoryById(int userInput)
     {
-        return null;
+        Category category = new Category();
+
+        String sql = """
+        SELECT category_id
+            , category_name
+            , description
+        FROM categories
+        WHERE category_id = ?;
+        """;
+
+        SqlRowSet row = jdbcTemplate.queryForRowSet(sql, userInput);
+
+        while(row.next())
+        {
+            int categoryById = row.getInt("category_id");
+            String categoryName = row.getString("category_name");
+            String description = row.getString("description");
+
+            category.setCategoryId(categoryById);
+            category.setCategoryName(categoryName);
+            category.setDescription(description);
+        }
+
+        return category;
     }
 
     /*
@@ -73,8 +96,16 @@ public class CategoryDao
     and insert a new category into the northwind database
     with the values that are provided by the user
      */
-    public void addCategory(Category category)
+    public void addCategory(Category userInput)
     {
+        String sql = """
+        INSERT INTO categories (category_name, description)
+        VALUES (?, ?)
+        """;
+
+        jdbcTemplate.update(sql,
+                userInput.getCategoryName(),
+                userInput.getDescription());
     }
 
     /*
@@ -82,17 +113,35 @@ public class CategoryDao
     modify all values (except the category_id)
     for the specified category
      */
-    public void updateCategory(Category category)
+    public void updateCategory(Category userInput)
     {
+        String sql = """
+        UPDATE categories
+        SET category_name = ?, description = ?
+        WHERE category_id = ?;
+        """;
+
+        jdbcTemplate.update(sql,
+                userInput.getCategoryName(),
+                userInput.getDescription(),
+                userInput.getCategoryId());
     }
 
     /*
     Write the code to DELETE the category
     with the specified ID
      */
-    public void deleteCategory(int categoryId)
+
+    // full disclosure, I had a mistake in this code that was creating an empty category as I deleted them,
+    // in case you notice some empty categories there.
+    // I then deleted the Sporting Goods category to confirm this code now works as expected.
+    public void deleteCategory(int userInput)
     {
+        String sql = """
+        DELETE FROM categories
+        WHERE category_id = ?;
+        """;
+
+        jdbcTemplate.update(sql, userInput);
     }
-
-
 }
