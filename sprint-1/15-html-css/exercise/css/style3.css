@@ -13,7 +13,9 @@ body {
 
     .flex-container {
         display: flex;
-        flex-wrap: nowrap;
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
     }
     
     .flex-container > div {
@@ -180,7 +182,7 @@ body {
 
     .flex-container {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         flex-direction: row;    
         justify-content: space-around;
     }
@@ -277,7 +279,6 @@ body {
     line-height: 2.2;
     justify-self: center;
     font-size: clamp(1rem, 8.75vw, 2.25rem);
-    
     text-align: center;
 }
 
@@ -307,7 +308,7 @@ body {
     align-self: center;
     justify-content: center;
     text-align: center;
-    vertical-align: middle; 
+    vertical-align: middle;
 }
 
 .or-text {
@@ -447,7 +448,7 @@ div.desc {
 }
 
 .grid-container > div {
-  text-align: center;
+    text-align: center;
 }
 
 /*
@@ -456,9 +457,15 @@ div.desc {
 *****************************************************
 */
 
+.checkout-page {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-left: 200px;
+}
 
 .checkout-section-title {
-    width: 100%;
     margin: 0;
     background-color: #ffffff;
     font-family: "Roboto Condensed","Arial Narrow","Arial","Helvetica","sans-serif";
@@ -466,11 +473,11 @@ div.desc {
     font-size: 40px;
     font-weight: 600;
     text-transform: uppercase;
-    justify-content: left;
+    justify-content: center;
 }
 
 .checkout-section-desc {
-    width: 100%;
+    margin-top: 10px;
     background-color: #ffffff;
     font-family: "Roboto Condensed","Arial Narrow","Arial","Helvetica","sans-serif";
     color: #181a1a;
@@ -480,12 +487,66 @@ div.desc {
     text-align: left;
 }
 
+.checkout-total {
+    width: 100%;
+    margin-top: 20px;
+    text-align: right;
+    font-family: "Roboto Condensed","Arial Narrow","Arial","Helvetica","sans-serif";
+    color: #006491;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.checkout-total table {
+    width: 100%;
+    background-color: #006491;
+    font-family: "Roboto Condensed","Arial Narrow","Arial","Helvetica","sans-serif";
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+#total-amount {
+    text-align: left;
+}
+
+#order-summary {
+    text-align: right;
+}
+
+#sign-in-image {
+    margin-top: 20px;
+}
+
 .checkout-form {
+    margin-top: 35px;
     font-family: "Arial","Helvetica","sans-serif";
     color: #181a1a;    
     font-size: 13px;
     font-weight: 600;
     line-height: 20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    flex-basis: 33%;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+.form-group input {
+    flex-basis: 80%; 
+    text-align: left;
+    padding: 5px;
 }
 
 .create-account {
@@ -495,35 +556,24 @@ div.desc {
     display: inline-flex;
     cursor: pointer;
     vertical-align: 15%;
-    
-}
-
-.checkout-total {
-    margin: 8px;
-    font-family: "Roboto Condensed","Arial Narrow","Arial","Helvetica","sans-serif";
-    color: #006491;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: right;
+    margin-top: 10px;
 }
 
 .place-your-order-button {
-    margin-top: 70px;
-    justify-self: center;
+    margin-top: 30px;
     background-color: #e31837;
-    width: 275px;
+    width: 100%;
+    line-height: 1.375;
     border: 0;
     border-radius: .1875rem;
     padding: 12px;
     font-family: "Roboto Condensed","Arial Narrow","Arial","Helvetica","sans-serif";
     color: #ffffff;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-weight: 500;
-    letter-spacing: .027em;
+    letter-spacing: 0;
     text-transform: uppercase;
     cursor: pointer;
-    align-self: center;
-    justify-content: center;
     text-align: center;
-    vertical-align: middle; 
+    vertical-align: middle;     
 }

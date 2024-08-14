@@ -33,7 +33,6 @@
                     <li></li>
                     <li></li>
                     <button class="nav-button-profile">Sign In & Earn Rewards</button>
-                    
                 </ul>
                 </div>
             </nav>
@@ -42,44 +41,56 @@
         <div class="item2">
             <nav class="sub-nav-menu">
                 <div class="flex-container">
+        
                 </div>
             </nav>
         </div>
 
         <section class="checkout-page">
-        <h1 class="checkout-section-title">Checkout</h1><br>
+        <h1 class="checkout-section-title">Checkout</h1>
         <span class="checkout-section-desc">Domino's Carside Delivery® from 123 Main Street Anytown, USA 54321<br>Your order will be ready 10-20 minutes after it is placed.<span>
-        <br><br>
-        </section>
         
         <div class="checkout-total">
-            <span class="total">Total: $00.00</span><br>
-            <span class="dropdown">Show Order Summary &#x25BC;</span>
+            <table>
+                <tr>
+                    <td id="total-amount">Total: $00.00</td>
+                    <td id="order-summary">Show Order Summary &#x25BC;</td>
+                </tr>
+            </table>
         </div>
-     
+        
+        <img src="images/signin.png" alt="Sign In" id="sign-in-image">
+
         <form class="checkout-form">
-            <label for="fname">First Name:</label>
-            <input type="text" id="fname" name="fname" value=""><br>
-
-            <label for="lname">Last Name:</label>
-            <input type="text" id="lname" name="lname" value=""><br>
-
-            <label for="lname">Email Address:</label>
-            <input type="text" id="email" name="email" value=""><br>
-
-            <label for="lname">Callback Phone #:</label>
-            <input type="text" id="phone" name="phone" value="Phone"><br><br>
+            <div class="form-group">
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" value="">
+            </div>
+        
+            <div class="form-group">
+                <label for="lname">Last Name: </label>
+                <input type="text" id="lname" name="lname" value="">
+            </div>
+        
+            <div class="form-group">
+                <label for="email">Email Address: </label>
+                <input type="email" id="email" name="email" value="">
+            </div>
+        
+            <div class="form-group">
+                <label for="phone">Callback Phone #: </label>
+                <input type="tel" id="phone" name="phone" value="">
+            </div>
 
             <input type="checkbox" id="create-account" name="create-account" value="create-account">
             <div class="create-account"><label for="create-account">Create a Domino's Profile for faster ordering and to enroll in Domino's® Rewards</label></div><br>
             <input type="checkbox" id="create-account" name="create-account" value="create-account">
             <div class="create-account"><label for="create-account">Yes, I would like to receive e-mail offers from Domino's Pizza</label></div>
-
-
-
         </form>
 
-<button class="place-your-order-button">Place Your Order</button>
+            <button class="place-your-order-button">Place Your Order</button>
+        </section>
+
 
 <div class="item5"></div>
 <div class="item6"></div>
