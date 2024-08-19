@@ -13,30 +13,3 @@ body {
     color: var(--murrey);
     background-color: var(--thistle);
 }
-
-table {
-    width: 100%;
-    margin:0;
-    padding: 0;
-    border-collapse: collapse;
-    color: var(--murrey);
-}
-
-tr {
-    margin: 0;
-    padding: 0;
-}
-
-td, th {
-    padding:10px 5px;
-    border-bottom: solid 1px var(--thistle);
-
-}
-
-tr:nth-child(even) {
-    background-color: var(--thistle);
-}
-
-tr: hover {
-    background-color: var(--periwinkle);
-}

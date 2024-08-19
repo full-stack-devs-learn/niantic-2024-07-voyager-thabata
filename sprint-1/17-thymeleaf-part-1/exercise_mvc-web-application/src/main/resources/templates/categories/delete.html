@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/styles.css">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+
+<div th:replace="fragments/head :: head"></div>
+
+<body>
+
+<div th:replace="fragments/navigation :: nav"></div>
+
+<main class="container mt-4">
+
+    <h1>Warning!</h1>
+
+    <h2>You are about to delete the following category:</h2>
+
+    <table class="table">
+        <tr><th>Id:</th> <td th:text="${category.categoryId}"></td></tr>
+        <tr><th>Category Name:</th> <td th:text="${category.categoryName}"></td></tr>
+        <tr><th>Description:</th> <td th:text="${category.description}"></td></tr>
+    </table>
+
+    <form method="post">
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="/categories" class="btn btn-secondary">Cancel</a>
+    </form>
+
+</main>
+</body>
+</html>
