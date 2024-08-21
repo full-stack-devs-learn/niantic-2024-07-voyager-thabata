@@ -6,9 +6,23 @@ public class Quiz
     private final int possiblePoints;
     private final String studentName;
 
+    public Quiz() {
+        this(0,"");
+    }
+
+    public Quiz(int possiblePoints, String studentName)
+    {
+        this.possiblePoints = Math.max(possiblePoints, 0);
+        this.studentName = studentName;
+    }
+
     public int getScore()
     {
-        return score;
+        if (score < 0)
+        {
+            return 0;
+        }
+        else return Math.min(score, 100);
     }
 
     public void setScore(int score)
@@ -18,7 +32,7 @@ public class Quiz
 
     public int getPossiblePoints()
     {
-        return possiblePoints;
+        return Math.max(possiblePoints, 0);
     }
 
     public String getStudentName()
@@ -26,15 +40,9 @@ public class Quiz
         return studentName;
     }
 
-    public Quiz(int possiblePoints, String studentName)
-    {
-        this.possiblePoints = possiblePoints;
-        this.studentName = studentName;
-    }
-
     public int getPercent()
     {
-        return score / possiblePoints * 100;
+        return (int) ((double) getScore() / getPossiblePoints() * 100);
     }
 
     public String getLetterGrade()
