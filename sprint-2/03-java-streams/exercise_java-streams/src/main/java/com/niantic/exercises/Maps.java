@@ -2,12 +2,10 @@ package com.niantic.exercises;
 
 import com.niantic.models.LineItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Maps
 {
-
     /*
     1) using a chain of Java Stream functions, convert the list of line items to
        a list of company names.
@@ -18,7 +16,11 @@ public class Maps
      */
     public List<String> mapCompanyNames(List<LineItem> lineItems)
     {
-        return new ArrayList<>();
+        return lineItems.stream()
+                .map(LineItem::getCompanyName)
+                .sorted()
+                .distinct()
+                .toList();
     }
 
     /*
@@ -31,7 +33,11 @@ public class Maps
      */
     public List<String> mapCategories(List<LineItem> lineItems)
     {
-        return new ArrayList<>();
+        return lineItems.stream()
+                .map(LineItem::getCategoryName)
+                .sorted()
+                .distinct()
+                .toList();
     }
 
     /*
@@ -44,7 +50,11 @@ public class Maps
      */
     public List<String> mapProducts(List<LineItem> lineItems)
     {
-        return new ArrayList<>();
+        return lineItems.stream()
+                .map(LineItem::getProductName)
+                .sorted()
+                .distinct()
+                .toList();
     }
 
     /*
@@ -57,7 +67,11 @@ public class Maps
      */
     public List<String> mapYears(List<LineItem> lineItems)
     {
-        return new ArrayList<>();
+        return lineItems.stream()
+                .map(lineItem -> String.valueOf(lineItem.getOrderDate().getYear()))
+                .distinct()
+                .sorted()
+                .toList();
     }
 
     /*
@@ -70,6 +84,10 @@ public class Maps
      */
     public List<String> mapOrderIds(List<LineItem> lineItems)
     {
-        return new ArrayList<>();
+        return lineItems.stream()
+                .map(lineItem -> String.valueOf(lineItem.getOrderId()))
+                .distinct()
+                .sorted()
+                .toList();
     }
 }
