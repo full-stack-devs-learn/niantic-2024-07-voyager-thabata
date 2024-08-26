@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Hand
 {
-    private ArrayList<Card> cards = new ArrayList<>();
+    private final ArrayList<Card> cards = new ArrayList<>();
 
     public ArrayList<Card> getCards()
     {
@@ -13,10 +13,19 @@ public class Hand
 
     public int getPointValue()
     {
-        int sum = cards.stream()
-                .map(Card::getPointValue)
-                .reduce(0, Integer::sum);
+        // return sum of all card points
+        int sum = 0;
+
+        for(Card card : cards)
+        {
+            sum += card.getValue();
+        }
         return sum;
+    }
+
+    public int getCardCount()
+    {
+        return cards.size();
     }
 
     public void dealTo(Card card)

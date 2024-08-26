@@ -5,35 +5,32 @@ import java.util.Collections;
 
 public class Deck
 {
-    private ArrayList<Card> cards;
+    private final ArrayList<Card> cards;
 
     public Deck()
     {
-        // build the deck of cards
         cards = new ArrayList<>();
 
-        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        String[] colors = {"Red", "Blue", "Green", "Yellow"};
+        String[] faces = {"0","1","2","3","4","5","6","7","★"};
+        String[] suits = {"♣","♦","♥","♠"};
+        int[] quantities = {1, 1, 1, 1, 1, 1, 1, 1, 1};
 
-        for(String color : colors)
+        for(String suit : suits)
         {
-            for(int number : numbers)
+            for(String face : faces)
             {
-                Card card = new Card(color,number);
-                cards.add(card);
+                for(int quantity : quantities)
+                {
+                    Card card = new Card(suit, face, quantity);
+                    cards.add(card);
+                }
             }
         }
     }
 
-    public int getCardCount()
-    {
-        return cards.size();
-    }
-
     public Card takeCard()
     {
-        Card card = cards.removeFirst();
-        return card;
+        return cards.removeFirst();
     }
 
     public void shuffle()

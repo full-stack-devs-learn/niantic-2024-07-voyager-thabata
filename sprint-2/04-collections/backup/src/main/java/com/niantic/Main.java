@@ -1,12 +1,12 @@
 package com.niantic;
 
-import com.niantic.application.Lucky13;
+import com.niantic.application.CardGameApplication;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        Lucky13 game = new Lucky13();
+        CardGameApplication game = new CardGameApplication();
         game.run();
     }
 }
