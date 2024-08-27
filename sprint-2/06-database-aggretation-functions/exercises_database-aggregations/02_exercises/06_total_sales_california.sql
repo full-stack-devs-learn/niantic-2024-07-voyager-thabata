@@ -4,6 +4,8 @@
 
 -- (1 row) - $3490.02
 
+USE northwind;
 
-
-
+SELECT SUM(sales_price * quantity) AS sum_all_CA_sales
+FROM customer_orders
+WHERE region = 'CA';

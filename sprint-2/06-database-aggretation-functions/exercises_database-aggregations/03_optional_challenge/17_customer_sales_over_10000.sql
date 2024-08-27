@@ -5,7 +5,11 @@
 
 -- (6 rows)
 
+USE northwind;
 
-
-
-
+SELECT company_name
+	, region
+    , (sales_price * quantity) AS total_sales
+FROM customer_orders
+WHERE (sales_price * quantity) > 10000
+ORDER BY sales_price * quantity DESC;

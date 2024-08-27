@@ -2,5 +2,7 @@
 
 -- (1 row)
 
+USE northwind;
 
-
+SELECT MAX(unit_price) AS most_expensive_product
+FROM products;

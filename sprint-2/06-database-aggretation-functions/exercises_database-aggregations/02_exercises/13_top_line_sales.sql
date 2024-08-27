@@ -9,8 +9,17 @@
 -- Simons bistro,               10417,  Denmark,    10540.00
 -- Rattlesnake Canyon Grocery,  10889,  USA,        10540.00
 
-
 -- (1 row)
+
+USE northwind;
+
+SELECT company_name
+	, order_id
+    , country
+    , sales_price * quantity AS total_sales
+FROM customer_orders
+ORDER BY sales_price * quantity DESC
+LIMIT 5;
 
 
 

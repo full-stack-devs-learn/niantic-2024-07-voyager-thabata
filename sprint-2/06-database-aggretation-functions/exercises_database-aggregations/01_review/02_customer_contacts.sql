@@ -10,5 +10,7 @@
 
 -- (78 Rows)
 
-
-
+SELECT company_name
+	 , CONCAT (city, ", ", COALESCE(region, ""), ", ", postal_code) AS city_state_zip
+FROM customers
+WHERE NOT country = 'USA';

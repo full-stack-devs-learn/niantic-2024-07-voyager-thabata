@@ -4,5 +4,8 @@
 
 -- (1 row)
 
+USE northwind;
 
-
+SELECT AVG((sales_price * quantity) - discount) AS average_sales_amount_usa
+FROM customer_orders
+WHERE country = "USA"
