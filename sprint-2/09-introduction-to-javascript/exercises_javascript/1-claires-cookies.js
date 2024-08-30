@@ -1,4 +1,4 @@
-﻿/*
+﻿ /*
 1.	Claire's cookies cost $12.95 a dozen.
 
 	A customer places an order with a quantity
@@ -16,7 +16,9 @@
 
 function calculateOrderSubtotal(quantity)
 {
-	return 0;
+	const price = 12.95;
+	
+	return price * quantity;
 }
 
 
@@ -40,7 +42,10 @@ function calculateOrderSubtotal(quantity)
 
 function calculateTax(quantity)
 {
-	return 0;
+	const price = 12.95;
+	const tax = 5.75 / 100;
+
+	return Math.round(price * quantity * tax * 100) / 100;
 }
 
 
@@ -63,11 +68,20 @@ function calculateTax(quantity)
 
 */
 
-// create your function here
+function calculateOrderTotal(quantity)
+{
+	const price = 12.95;
+
+	const tax = calculateTax(quantity)
+
+	const total = Math.round((price * quantity + tax) * 100) / 100;
+
+	return total;
+}
 
 
 /*
-3.	With each order Claire needs to generate 
+4.	With each order Claire needs to generate 
 	a receipt to print for the customer
 	and to store for her records.
 
@@ -105,7 +119,24 @@ function calculateTax(quantity)
 
 */
 
-// create your function here
+function placeOrder(customer, quantity)
+{
+	const tax = calculateTax(quantity);
+
+	const subtotal = calculateOrderSubtotal(quantity);
+
+	const total = calculateOrderTotal(quantity);
+
+	const receipt = {
+		customer: customer,
+		quantity: quantity,
+		subtotal: subtotal,
+		tax: tax,
+		total: total
+	};
+
+	return receipt;
+}
 
 
 /*
@@ -127,4 +158,11 @@ function calculateTax(quantity)
 
 */
 
-// create your function here
+function calculateCookiesNeeded(a, b, other)
+{
+	const studentsA = 4 * a;
+	const studentsB = 3 * b;
+	const studentsOther = 2 * other;
+
+	return Math.ceil((studentsA + studentsB + studentsOther) / 12);
+}

@@ -20,5 +20,11 @@
 
 USE northwind;
 
+SELECT CONCAT(e1.first_name, " ", e1.last_name) AS employee
+	, (
+		SELECT CONCAT(e2.first_name, " ", e2.last_name) AS manager
+        FROM employees AS e2
+		WHERE e1.reports_to = e2.employee_id
+	) AS manager
 
-
+FROM employees AS e1

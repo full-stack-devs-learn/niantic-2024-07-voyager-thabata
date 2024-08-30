@@ -1,3 +1,3 @@
 //
 
-console.log('My firs JS log');
+console.log('My first JS log');

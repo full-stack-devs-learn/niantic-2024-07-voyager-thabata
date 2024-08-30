@@ -21,4 +21,20 @@
 
 USE northwind;
 
+SELECT o.order_id
+	, (
+		SELECT c.company_name
+		FROM customers AS c
+		WHERE c.customer_id = o.customer_id
+	) AS customer_name
+	, (
+		SELECT SUM(od.unit_price * od.quantity * (1 - od.discount))
+        FROM order_details AS od
+        WHERE od.order_id = o.order_id
+	) AS sales_total
+	
+FROM orders AS o
 
+ORDER BY sales_total DESC
+
+LIMIT 5;
