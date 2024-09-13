@@ -18,7 +18,7 @@ public class ProductsController
 
     // list all categories
     @GetMapping( "/products")
-    public String products(Model model, @RequestParam(defaultValue = "1") int catId)
+    public String products(Model model, @RequestParam(defaultValue = "0") int catId)
     {
         var products = productDao.getProductsByCategory(catId);
         var category = categoryDao.getCategoryById(catId);
@@ -28,6 +28,16 @@ public class ProductsController
         model.addAttribute("currentCategory", category);
         model.addAttribute("products", products);
         return "products/index";
+    }
+
+    // get products by category
+    @GetMapping("/products/category/{categoryId}")
+    public String getProductsByCategory (Model model, @PathVariable("categoryId") int categoryId)
+    {
+        ArrayList<Product> products = productDao.getProductsByCategory(categoryId);
+        model.addAttribute("products", products);
+
+        return "fragments/product-table";
     }
 
     // details page
