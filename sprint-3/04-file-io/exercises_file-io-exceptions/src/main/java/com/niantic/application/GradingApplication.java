@@ -5,6 +5,10 @@ import com.niantic.services.GradesFileService;
 import com.niantic.services.GradesService;
 import com.niantic.ui.UserInput;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 public class GradingApplication implements Runnable
@@ -32,6 +36,9 @@ public class GradingApplication implements Runnable
                     break;
                 case 5:
                     displayAssignmentStatistics();
+                    break;
+                case 7:
+                    createStudentSummaryReport();
                     break;
                 case 0:
                     UserInput.displayMessage("Goodbye");
@@ -129,5 +136,48 @@ public class GradingApplication implements Runnable
         return fileName.replace(".csv", "")
                         .replace("_", " ")
                         .substring(10);
+    }
+
+    private void createStudentSummaryReport()
+    {
+        File reportDir = new File("reports");
+        if (!reportDir.exists()) {
+            reportDir.mkdir();
+        }
+
+        displayAllFiles();
+        String fileName = UserInput.getFileNameSelection();
+        List<Assignment> assignments = gradesService.getAssignments(fileName);
+
+        if (assignments.isEmpty())
+        {
+            UserInput.displayMessage("No assignments found for this file.");
+            return;
+        }
+
+        String studentName = assignments.get(0).getFirstName() + " " + assignments.get(0).getLastName();
+        int minScore = assignments.stream().mapToInt(Assignment::getScore).min().orElse(0);
+        int maxScore = assignments.stream().mapToInt(Assignment::getScore).max().orElse(0);
+        double avgScore = assignments.stream().mapToInt(Assignment::getScore).average().orElse(0.0);
+
+        String currentDate = java.time.LocalDate.now().toString();
+        String reportFileName = "reports/" + currentDate + "_" + studentName.replace(" ", "_").toLowerCase() + ".txt";
+
+        StringBuilder reportContent = new StringBuilder();
+        reportContent.append(studentName).append("\n");
+        reportContent.append("-".repeat(40)).append("\n");
+        reportContent.append(String.format("Low Score %30d\n", minScore));
+        reportContent.append(String.format("High Score %29d\n", maxScore));
+        reportContent.append(String.format("Average Score %26.2f\n", avgScore));
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(reportFileName)))
+        {
+            writer.write(reportContent.toString());
+            UserInput.displayMessage("Student Summary Report created: " + reportFileName);
+        }
+        catch (IOException e)
+        {
+            UserInput.displayMessage("Error creating report: " + e.getMessage());
+        }
     }
 }
