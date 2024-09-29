@@ -35,4 +35,10 @@ public class UserInput
         System.out.println();
         System.out.println(message);
     }
+
+    public static String getFileNameSelection()
+    {
+        System.out.print("Please enter the name of the file: ");
+        return in.nextLine();
+    }
 }
