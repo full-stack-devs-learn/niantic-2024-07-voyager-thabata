@@ -1,6 +1,7 @@
 package com.niantic.services;
 
 import com.niantic.models.Category;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
